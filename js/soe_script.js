@@ -57,7 +57,7 @@ async function notPrime(num){
 }
 
 async function primeSieveAlgo(){
-       //kisi index pe false set hai to us index ko prime number consider kiya jayega
+        //kisi index pe false set hai to us index ko prime number consider kiya jayega
         //kisi index pe true set hai to us index ko not prime number consider kiya jayega
         let arr = new Array(101);
         arr[0]=true;

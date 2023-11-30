@@ -166,41 +166,6 @@ async function insertionSort(array) {
   }
 
 //------------------------------------------------------------------------------------------------------------------
-
-//heap sort---------------------------------------------------------------------------------------------------------
-
-async function heapSort(array) {
-    let bars = document.getElementsByClassName("bar");
-    for (let i = Math.floor(array.length / 2); i >= 0; i--) {
-      await heap(array, array.length, i);
-    }
-    for (let i = array.length - 1; i >= 0; i--) {
-      await swap(array, 0, i, bars);
-      await heap(array, i, 0);
-    }
-    for (let k = 0; k < bars.length; k++) {
-      bars[k].style.backgroundColor = "aqua";
-      await sleep(ms);
-    }
-    return array;
-  }
-  
-  async function heap(array, n, i) {
-    let bars = document.getElementsByClassName("bar");
-    let largest = i;
-    let left = 2 * i + 1;
-    let right = 2 * i + 2;
-    if (left < n && array[left] > array[largest]) {
-      largest = left;
-    }
-    if (right < n && array[right] > array[largest]) {
-      largest = right;
-    }
-    if (largest != i) {
-      await swap(array, i, largest, bars);
-      await heap(array, n, largest);
-    }
-  }
   
   async function swap(array, i, j, bars) {
     let temp = array[i];
